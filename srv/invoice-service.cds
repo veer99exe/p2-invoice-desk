@@ -1,7 +1,7 @@
 using { p2 } from '../db/schema';
 
 @path: '/invoices'
-@requires: ['APClerk', 'APManager']
+// @requires: ['APClerk', 'APManager']
 service InvoiceService {
 
   // Read-only: every change goes through the actions, which enforce R1-R3.
