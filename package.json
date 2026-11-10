@@ -1,0 +1,48 @@
+{
+  "name": "p2-invoice-desk",
+  "version": "1.0.0",
+  "private": true,
+  "description": "P2 Invoice Desk: pre-payment supplier invoice checks (SAP CAP + Fiori elements)",
+  "scripts": {
+    "start": "cds-serve",
+    "watch": "cds watch",
+    "test": "jest --runInBand --forceExit --silent"
+  },
+  "dependencies": {
+    "@cap-js/sqlite": "^3",
+    "@sap/cds": "^10",
+    "better-sqlite3": "^12",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/cds-test": "^1.0.2",
+    "jest": "^30"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "credentials": {
+          "url": ":memory:"
+        }
+      },
+      "auth": {
+        "kind": "mocked",
+        "users": {
+          "rita": {
+            "password": "rita",
+            "roles": [
+              "APClerk"
+            ]
+          },
+          "carla": {
+            "password": "carla",
+            "roles": [
+              "APManager"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
